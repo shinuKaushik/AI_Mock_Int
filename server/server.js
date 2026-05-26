@@ -9,7 +9,7 @@
 
 // Load environment variables FIRST (before anything else uses them)
 import "dotenv/config";
-
+import cors from 'cors';
 // Import our configured Express app
 import app from "./src/app.js";
 
@@ -20,6 +20,15 @@ import connectDB from "./src/config/db.config.js";
 const PORT = process.env.PORT || 5000;
 
 // ---- Start the Server ----
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://YOUR-VERCEL-URL.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 const startServer = async () => {
   try {
