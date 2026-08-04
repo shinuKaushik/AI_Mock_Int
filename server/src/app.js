@@ -28,7 +28,7 @@ const app = express();
 //    Without this, browsers will block requests from localhost:5173 → localhost:5000
 app.use(cors({ origin: [
       "http://localhost:5173",
-      "https://ai-mock-pahkb9hag-kaushikshashwat1203-7242s-projects.vercel.app",
+      "https://ai-mock-int-seven.vercel.app",
     ],
     credentials: true,
   })
